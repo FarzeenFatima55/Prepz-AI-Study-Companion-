@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Urbanist", sans-serif;
+  --breakpoint-3xl: 1920px;
+  --color-primary: #0ea5e9;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-display);
+  }
+
+  :root {
+    --bg-base: #f0f9ff;
+    --bg-surface: #ffffff;
+    --bg-surface-2: #e0f2fe;
+    --bg-overlay: rgba(255, 255, 255, 0.92);
+
+    --border-color: rgba(14, 165, 233, 0.2);
+    --border-subtle: rgba(14, 165, 233, 0.08);
+
+    --text-primary: #0c1a2e;
+    --text-secondary: #1e4a6e;
+    --text-muted: #5b8db0;
+    --text-inverse: #ffffff;
+
+    --sidebar-bg: rgba(255, 255, 255, 0.97);
+    --sidebar-border: rgba(14, 165, 233, 0.15);
+
+    --nav-active-from: #0ea5e9;
+    --nav-active-to: #22d3ee;
+    --nav-active-shadow: rgba(14, 165, 233, 0.35);
+    --nav-hover-bg: rgba(14, 165, 233, 0.08);
+    --nav-hover-text: #0284c7;
+
+    --logo-from: #0ea5e9;
+    --logo-to: #22d3ee;
+    --logo-shadow: rgba(14, 165, 233, 0.3);
+
+    --btn-primary-from: #0ea5e9;
+    --btn-primary-to: #22d3ee;
+    --btn-primary-shadow: rgba(14, 165, 233, 0.35);
+
+    --input-bg: #f0f9ff;
+    --input-border: rgba(14, 165, 233, 0.2);
+    --input-focus-border: #0ea5e9;
+    --input-focus-shadow: rgba(14, 165, 233, 0.15);
+
+    --card-bg: #ffffff;
+    --card-border: rgba(14, 165, 233, 0.12);
+    --card-shadow: rgba(14, 165, 233, 0.08);
+    --card-hover-shadow: rgba(14, 165, 233, 0.18);
+
+    --badge-bg: rgba(34, 211, 238, 0.1);
+    --badge-text: #0284c7;
+
+    --glow-primary: rgba(14, 165, 233, 0.12);
+    --glow-secondary: rgba(34, 211, 238, 0.08);
+  }
+
+  .dark {
+    --bg-base: #060d18;
+    --bg-surface: #0d1b2e;
+    --bg-surface-2: #112240;
+    --bg-overlay: rgba(10, 20, 40, 0.97);
+
+    --border-color: rgba(34, 211, 238, 0.12);
+    --border-subtle: rgba(34, 211, 238, 0.06);
+
+    --text-primary: #e2f4ff;
+    --text-secondary: #7ec8e3;
+    --text-muted: #3a7a99;
+    --text-inverse: #ffffff;
+
+    --sidebar-bg: rgba(6, 13, 24, 0.98);
+    --sidebar-border: rgba(34, 211, 238, 0.1);
+
+    --nav-active-from: #0ea5e9;
+    --nav-active-to: #22d3ee;
+    --nav-active-shadow: rgba(34, 211, 238, 0.25);
+    --nav-hover-bg: rgba(34, 211, 238, 0.07);
+    --nav-hover-text: #22d3ee;
+
+    --logo-from: #0ea5e9;
+    --logo-to: #22d3ee;
+    --logo-shadow: rgba(34, 211, 238, 0.2);
+
+    --btn-primary-from: #0284c7;
+    --btn-primary-to: #0ea5e9;
+    --btn-primary-shadow: rgba(14, 165, 233, 0.3);
+
+    --input-bg: #0d1b2e;
+    --input-border: rgba(34, 211, 238, 0.12);
+    --input-focus-border: #22d3ee;
+    --input-focus-shadow: rgba(34, 211, 238, 0.1);
+
+    --card-bg: #0d1b2e;
+    --card-border: rgba(34, 211, 238, 0.08);
+    --card-shadow: rgba(0, 0, 0, 0.3);
+    --card-hover-shadow: rgba(34, 211, 238, 0.12);
+
+    --badge-bg: rgba(34, 211, 238, 0.08);
+    --badge-text: #22d3ee;
+
+    --glow-primary: rgba(14, 165, 233, 0.08);
+    --glow-secondary: rgba(34, 211, 238, 0.05);
+  }
+
+  body {
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Buttons — sab jagah green ki jagah blue/cyan */
+  .btn-primary {
+    background: linear-gradient(135deg, var(--btn-primary-from), var(--btn-primary-to));
+    box-shadow: 0 4px 14px var(--btn-primary-shadow);
+    color: var(--text-inverse);
+    border-radius: 0.75rem;
+    transition: all 0.2s ease;
+  }
+
+  .btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px var(--btn-primary-shadow);
+  }
+
+  /* Emerald/green override — replace with cyan */
+  .from-emerald-500 { --tw-gradient-from: #0ea5e9 !important; }
+  .to-teal-500 { --tw-gradient-to: #22d3ee !important; }
+  .from-emerald-400 { --tw-gradient-from: #0ea5e9 !important; }
+  .to-teal-400 { --tw-gradient-to: #22d3ee !important; }
+  .from-emerald-600 { --tw-gradient-from: #0284c7 !important; }
+  .to-teal-600 { --tw-gradient-to: #0ea5e9 !important; }
+  .text-emerald-600 { color: #0ea5e9 !important; }
+  .text-emerald-500 { color: #0ea5e9 !important; }
+  .text-emerald-700 { color: #0284c7 !important; }
+  .hover\:text-emerald-700:hover { color: #0284c7 !important; }
+  .focus\:border-emerald-500:focus { border-color: #0ea5e9 !important; }
+  .focus\:shadow-emerald-500\/10:focus { box-shadow: 0 0 0 3px rgba(14,165,233,0.1) !important; }
+  .shadow-emerald-500\/25 { box-shadow: 0 4px 14px rgba(14,165,233,0.25) !important; }
+  .ring-emerald-500\/20 { --tw-ring-color: rgba(14,165,233,0.2) !important; }
+  .hover\:bg-emerald-50:hover { background-color: rgba(14,165,233,0.08) !important; }
+  .bg-emerald-50 { background-color: rgba(14,165,233,0.08) !important; }
+
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 999px;
+  }
+}
